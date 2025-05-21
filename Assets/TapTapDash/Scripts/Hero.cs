@@ -1,17 +1,21 @@
 using System;
+using Cysharp.Threading.Tasks;
+using DG.Tweening;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 namespace TapTapDash.Scripts
 {
-   // [ExecuteInEditMode]
     public class Hero : MonoBehaviour
     {
         [SerializeField] private Transform sprite;
         [SerializeField] private float radiusCheckFail = 1.0f;
         [SerializeField] private float speedMoving = 1.0f;
+        [SerializeField] private float jumpTime = 0.3f;
 
         private Vector2 _direction;
         public bool IsMoving { get; set; } = true;
+        public bool IsJumping { get; set; } = false;
 
         private void Awake()
         {
@@ -58,6 +62,16 @@ namespace TapTapDash.Scripts
             {
                 transform.position += (Vector3)_direction * speedMoving * Time.deltaTime;
             }
+        }
+
+        public async void StartJumpAsync()
+        {
+            IsJumping = true;
+            await transform.DOScale(new Vector3(1.2f, 1.2f, 1.2f), 0.2f);
+            await UniTask.Delay(TimeSpan.FromSeconds(jumpTime));
+            IsJumping = false;
+            
+            await transform.DOScale(Vector3.one, 0.2f);
         }
     }
 }

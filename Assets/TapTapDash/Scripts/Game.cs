@@ -7,11 +7,13 @@ namespace TapTapDash.Scripts
 {
     public class Game : MonoBehaviour
     {
-        [SerializeField] private LevelLines levelLines;
         [SerializeField] private InputHandler inputHandler;
         [SerializeField] private Hero hero;
         [SerializeField] private GameOverScreen gameOverScreen;
         [SerializeField] private RotateCameraByDirection rotateCameraByDirection;
+
+        [SerializeField] private TileMapLevel tileMapLevel;
+        [SerializeField] private Vector3 offsetHeroByGrid;
 
         private void Awake()
         {
@@ -21,6 +23,11 @@ namespace TapTapDash.Scripts
             inputHandler.OnTap = OnTap;
         }
 
+        private void Start()
+        {
+            hero.transform.position = tileMapLevel.StartPosition + offsetHeroByGrid;
+        }
+
         private void OnRestartGame()
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
@@ -28,6 +35,9 @@ namespace TapTapDash.Scripts
 
         private void Update()
         {
+            if(hero.IsJumping)
+                return;
+            
             var coll = hero.GetCollider();
             if (!coll && hero.IsMoving)
             {
@@ -38,15 +48,18 @@ namespace TapTapDash.Scripts
 
         private void OnTap()
         {
-            var coll = hero.GetCollider();
-            if (coll)
+            if(hero.IsJumping)
+                return;
+            
+            if (tileMapLevel.TryGetDirectionByTileWorld(hero.transform.position, out Direction direction))
             {
-                var line = coll.GetComponentInParent<MovementLine>();
-                if (line)
-                {
-                    hero.SetDirection(line.DirectionAfterTab);  
-                    rotateCameraByDirection.SetDirection(line.DirectionAfterTab);
-                }
+                hero.SetDirection(direction);  
+                rotateCameraByDirection.SetDirection(direction);
+            }
+
+            if (tileMapLevel.TryGetIJump(hero.transform.position))
+            {
+                hero.StartJumpAsync();
             }
         }
     }
