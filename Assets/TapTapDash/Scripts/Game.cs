@@ -2,15 +2,16 @@ using System;
 using BlockBlast.Scripts.Game;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 
 namespace TapTapDash.Scripts
 {
     public class Game : MonoBehaviour
     {
-        [SerializeField] private InputHandler inputHandler;
         [SerializeField] private Hero hero;
+        [SerializeField] private InputHandler inputHandler;
         [SerializeField] private GameOverScreen gameOverScreen;
-        [SerializeField] private RotateCameraByDirection rotateCameraByDirection;
+        [SerializeField] private RotateCameraByHeroDirection rotateCameraByHeroDirection;
 
         [SerializeField] private TileMapLevel tileMapLevel;
         [SerializeField] private Vector3 offsetHeroByGrid;
@@ -19,7 +20,7 @@ namespace TapTapDash.Scripts
         {
             gameOverScreen.gameObject.SetActive(false);
             gameOverScreen.OnRestartGame = OnRestartGame;
-            
+
             inputHandler.OnTap = OnTap;
         }
 
@@ -35,9 +36,9 @@ namespace TapTapDash.Scripts
 
         private void Update()
         {
-            if(hero.IsJumping)
+            if (hero.IsInJump)
                 return;
-            
+
             var coll = hero.GetCollider();
             if (!coll && hero.IsMoving)
             {
@@ -48,18 +49,36 @@ namespace TapTapDash.Scripts
 
         private void OnTap()
         {
-            if(hero.IsJumping)
+            if (hero.IsInJump)
                 return;
-            
-            if (tileMapLevel.TryGetDirectionByTileWorld(hero.transform.position, out Direction direction))
-            {
-                hero.SetDirection(direction);  
-                rotateCameraByDirection.SetDirection(direction);
-            }
 
-            if (tileMapLevel.TryGetIJump(hero.transform.position))
+            var directionOffset = hero.Direction.ToVector2();
+            var currentPosition = hero.transform.position;
+            var foundAction = false;
+
+            while (!foundAction)
             {
-                hero.StartJumpAsync();
+                if (tileMapLevel.IsTile(currentPosition))
+                {
+                    if (tileMapLevel.TryGetDirectionByTileWorld(currentPosition, out Direction newDirection))
+                    {
+                        hero.SetDirection(newDirection);
+                        rotateCameraByHeroDirection.SetDirection(newDirection);
+                        foundAction = true;
+                    }
+
+                    if (tileMapLevel.TryGetIJump(currentPosition))
+                    {
+                        hero.StartJumpAsync();
+                        foundAction = true;
+                    }
+                }
+                else
+                {
+                    foundAction = true;
+                }
+
+                currentPosition += (Vector3)directionOffset;
             }
         }
     }

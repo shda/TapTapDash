@@ -2,7 +2,6 @@ using System;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using UnityEngine;
-using UnityEngine.Tilemaps;
 
 namespace TapTapDash.Scripts
 {
@@ -12,10 +11,11 @@ namespace TapTapDash.Scripts
         [SerializeField] private float radiusCheckFail = 1.0f;
         [SerializeField] private float speedMoving = 1.0f;
         [SerializeField] private float jumpTime = 0.3f;
-
+        public Direction Direction { get; set; }
+        
         private Vector2 _direction;
         public bool IsMoving { get; set; } = true;
-        public bool IsJumping { get; set; } = false;
+        public bool IsInJump { get; set; } = false;
 
         private void Awake()
         {
@@ -30,23 +30,10 @@ namespace TapTapDash.Scripts
 
         public void SetDirection(Direction direction)
         {
-            _direction = direction switch
-            {
-                Direction.Left => Vector2.left,
-                Direction.Right => Vector2.right,
-                Direction.Up => Vector2.up,
-                Direction.Down => Vector2.down,
-                _ => throw new ArgumentOutOfRangeException(nameof(direction), direction, null)
-            };
-            
-            float angle = direction switch
-            {
-                Direction.Left => 90,
-                Direction.Right => -90 ,
-                Direction.Up => 0,
-                Direction.Down => 180,
-                _ => throw new ArgumentOutOfRangeException(nameof(direction), direction, null)
-            };
+            Direction = direction;
+
+            _direction = direction.ToVector2();
+            var angle = direction.ToAngle();
 
             sprite.transform.rotation = Quaternion.Euler(0,0,angle);
         }
@@ -60,18 +47,18 @@ namespace TapTapDash.Scripts
         {
             if (IsMoving)
             {
-                transform.position += (Vector3)_direction * speedMoving * Time.deltaTime;
+                transform.position += (Vector3)_direction * (speedMoving * Time.deltaTime);
             }
         }
 
         public async void StartJumpAsync()
         {
-            IsJumping = true;
-            await transform.DOScale(new Vector3(1.2f, 1.2f, 1.2f), 0.2f);
+            IsInJump = true;
+            await transform.DOScale(new Vector3(1.3f, 1.3f, 11.3f), 0.1f);
             await UniTask.Delay(TimeSpan.FromSeconds(jumpTime));
-            IsJumping = false;
+            IsInJump = false;
             
-            await transform.DOScale(Vector3.one, 0.2f);
+            await transform.DOScale(Vector3.one, 0.1f);
         }
     }
 }

@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace TapTapDash.Scripts
 {
-    public class RotateCameraByDirection : MonoBehaviour
+    public class RotateCameraByHeroDirection : MonoBehaviour
     {
         [SerializeField] Transform cameraTransform;
 
