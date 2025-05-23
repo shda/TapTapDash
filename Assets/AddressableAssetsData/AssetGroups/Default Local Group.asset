@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Default Local Group
+  m_EditorClassIdentifier: 
+  m_GroupName: Default Local Group
+  m_GUID: 684455a0195ca164da2777078d5901a9
+  m_SerializeEntries:
+  - m_GUID: 5e440c1fea56fd64bb904cd9b82a846d
+    m_Address: Assets/TapTapDash/Map/TileMap/Prefab/3.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 793941ed26e04df4f98d3f8c6f826ef1
+    m_Address: Assets/TapTapDash/Map/TileMap
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ba96575e41c08a943ba2053f8fc6f821
+    m_Address: Assets/TapTapDash/Map/TileMap/Prefab/1.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cbaa1526f260e6541b987f6245ee10d1
+    m_Address: Assets/TapTapDash/Map/TileMap/Prefab/Text.txt
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d9329029ebd979f49ad51daae6868c27
+    m_Address: Assets/TapTapDash/Map/TileMap/Prefab/2.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e4d60cd7f23069f449e70359ac93aa23
+    m_Address: Assets/TapTapDash/Map/TileMap/Prefab/nextLevelConnector.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 82763ae8e21a112449d3e297eb24ee61, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: c3a8eb30f4f51c24d8ba3e44d459be66, type: 2}
+    - {fileID: 11400000, guid: 1b79096f2540ab74aa4d8e74cf1f2706, type: 2}

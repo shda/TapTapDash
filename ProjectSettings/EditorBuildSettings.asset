@@ -9,5 +9,6 @@ EditorBuildSettings:
     path: Assets/TapTapDash/Scenes/TapTapDash.unity
     guid: cf19ef2ca078a88418e69eb0f5092b09
   m_configObjects:
+    com.unity.addressableassets: {fileID: 11400000, guid: 7cde512c8220d2d49b67567533cc3046, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

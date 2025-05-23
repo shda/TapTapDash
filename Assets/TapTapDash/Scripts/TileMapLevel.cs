@@ -14,14 +14,35 @@ namespace TapTapDash.Scripts
         [SerializeField] private Tilemap tilemapService; 
         [SerializeField] private Tilemap tilemapGame;
 
-        public Vector3 StartPosition;
-        public Vector3 FinishPosition;
+      //  public Vector3 StartPosition;
+      //  public Vector3 FinishPosition;
 
         private void Awake()
         {
-            StartPosition = CalcStartPoint(tilemapService , "start");
-            FinishPosition = CalcStartPoint(tilemapService ,"finish");
+           // StartPosition = CalcStartPoint(tilemapService , "start");
+           // FinishPosition = CalcStartPoint(tilemapService ,"finish");
+           
+           HideServiceLayer();
         }
+
+        public void HideServiceLayer()
+        {
+            var render = tilemapService.GetComponent<TilemapRenderer>();
+            render.enabled = false;
+        }
+
+        //Todo: need optimization
+        public Vector3 GetStartPosition()
+        {
+            return CalcStartPoint(tilemapService , "start");
+        }
+
+        //Todo: need optimization
+        public Vector3 GetFinishPosition()
+        {
+            return CalcStartPoint(tilemapService , "finish");
+        }
+      
 
         private void Start()
         {
@@ -164,6 +185,26 @@ namespace TapTapDash.Scripts
                 }
             }
             return tiles.ToArray();
+        }
+        
+        private void OnValidate()
+        {
+            if (!map)
+            {
+                map = GetComponent<SuperMap>();
+            }
+            
+            if (!tilemapService)
+            {
+                tilemapService = transform.GetComponentsInChildren<Tilemap>()
+                    .FirstOrDefault(x => x.name == "Service");
+            }
+            
+            if (!tilemapGame)
+            {
+                tilemapGame = transform.GetComponentsInChildren<Tilemap>()
+                    .FirstOrDefault(x => x.name == "Walk");
+            }
         }
     }
 }

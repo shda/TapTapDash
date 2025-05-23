@@ -8,6 +8,7 @@ namespace TapTapDash.Scripts
 {
     public class Game : MonoBehaviour
     {
+        [SerializeField] private LevelLoader  levelLoader;
         [SerializeField] private Hero hero;
         [SerializeField] private InputHandler inputHandler;
         [SerializeField] private GameOverScreen gameOverScreen;
@@ -15,6 +16,8 @@ namespace TapTapDash.Scripts
 
         [SerializeField] private TileMapLevel tileMapLevel;
         [SerializeField] private Vector3 offsetHeroByGrid;
+        
+        private bool _isInitialized = false;
 
         private void Awake()
         {
@@ -26,7 +29,21 @@ namespace TapTapDash.Scripts
 
         private void Start()
         {
-            hero.transform.position = tileMapLevel.StartPosition + offsetHeroByGrid;
+            LoadLevel();
+        }
+
+        private async void LoadLevel()
+        {
+            hero.IsMoving = false;
+            _isInitialized = false;
+            
+            var startConnector = await levelLoader.LoadConnector();
+            tileMapLevel = await levelLoader.LoadLevelAndConnectToConnector(startConnector, 0);
+            
+            hero.transform.position = startConnector.GetStartPosition() + offsetHeroByGrid;
+            
+            _isInitialized = true;
+            hero.IsMoving = true;
         }
 
         private void OnRestartGame()
@@ -36,6 +53,9 @@ namespace TapTapDash.Scripts
 
         private void Update()
         {
+            if(!_isInitialized)
+                return;
+            
             if (hero.IsInJump)
                 return;
 

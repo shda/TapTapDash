@@ -13,24 +13,24 @@
             "scale": 0.25,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": 1140,
-                "y": -692
+                "x": 1092,
+                "y": -936
             }
         },
         "2.tmx": {
             "scale": 0.33,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 1025.7575757575758,
-                "y": -3.0303030303030027
+                "x": 521.2121212121212,
+                "y": -400
             }
         },
         "3.tmx": {
             "scale": 0.25,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 1042,
-                "y": -1284
+                "x": 1040,
+                "y": -768
             }
         },
         "E:/WorkingProjects/Prototypes/TapTapDash/Assets/TapTapDash/Map/atlas.tsx": {
