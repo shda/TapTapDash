@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8683266344066940692, guid: 1a4efd82a51fcc0419362f7c0f06dfdf, type: 3}
+      propertyPath: m_SortingOrder
+      value: -10
+      objectReference: {fileID: 0}
     - target: {fileID: -8109147373305843194, guid: 1a4efd82a51fcc0419362f7c0f06dfdf, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -48,6 +52,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7002880808761206524, guid: 1a4efd82a51fcc0419362f7c0f06dfdf, type: 3}
+      propertyPath: m_SortingOrder
+      value: -10
+      objectReference: {fileID: 0}
     - target: {fileID: 5213110595909832424, guid: 1a4efd82a51fcc0419362f7c0f06dfdf, type: 3}
       propertyPath: m_Name
       value: nextLevelConnector
@@ -80,8 +88,6 @@ MonoBehaviour:
   map: {fileID: 6516242126899852257}
   tilemapService: {fileID: 5787704154393078817}
   tilemapGame: {fileID: 4200351519340668294}
-  StartPosition: {x: 0, y: 0, z: 0}
-  FinishPosition: {x: 0, y: 0, z: 0}
 --- !u!1839735485 &4200351519340668294 stripped
 Tilemap:
   m_CorrespondingSourceObject: {fileID: 6905454356748006697, guid: 1a4efd82a51fcc0419362f7c0f06dfdf, type: 3}

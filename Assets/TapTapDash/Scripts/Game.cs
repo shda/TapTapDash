@@ -1,28 +1,25 @@
-using System;
 using BlockBlast.Scripts.Game;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.Serialization;
 
 namespace TapTapDash.Scripts
 {
     public class Game : MonoBehaviour
     {
-        [SerializeField] private LevelLoader  levelLoader;
+        [SerializeField] private LevelLoader levelLoader;
         [SerializeField] private Hero hero;
         [SerializeField] private InputHandler inputHandler;
         [SerializeField] private GameOverScreen gameOverScreen;
         [SerializeField] private RotateCameraByHeroDirection rotateCameraByHeroDirection;
-
-        [SerializeField] private TileMapLevel tileMapLevel;
         [SerializeField] private Vector3 offsetHeroByGrid;
-        
-        private bool _isInitialized = false;
+
+        private bool _isInitialized;
 
         private void Awake()
         {
             gameOverScreen.gameObject.SetActive(false);
-            gameOverScreen.OnRestartGame = OnRestartGame;
+            gameOverScreen.OnRestartGame = () => OnRestartGame();
 
             inputHandler.OnTap = OnTap;
         }
@@ -37,25 +34,23 @@ namespace TapTapDash.Scripts
             hero.IsMoving = false;
             _isInitialized = false;
             
-            var startConnector = await levelLoader.LoadConnector();
-            tileMapLevel = await levelLoader.LoadLevelAndConnectToConnector(startConnector, 0);
-            
+            var startConnector = await levelLoader.LoadLevelsStartOf(SelectLevel.SelectedLevelIndex);
             hero.transform.position = startConnector.GetStartPosition() + offsetHeroByGrid;
             
             _isInitialized = true;
             hero.IsMoving = true;
         }
 
-        private void OnRestartGame()
+        private async UniTask OnRestartGame()
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            await SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().name);
         }
 
         private void Update()
         {
-            if(!_isInitialized)
+            if (!_isInitialized)
                 return;
-            
+
             if (hero.IsInJump)
                 return;
 
@@ -76,6 +71,7 @@ namespace TapTapDash.Scripts
             var currentPosition = hero.transform.position;
             var foundAction = false;
 
+            var tileMapLevel = levelLoader.GetTileMapByPositon(currentPosition);
             while (!foundAction)
             {
                 if (tileMapLevel.IsTile(currentPosition))

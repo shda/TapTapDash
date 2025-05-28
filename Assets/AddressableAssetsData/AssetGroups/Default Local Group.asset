@@ -15,33 +15,8 @@ MonoBehaviour:
   m_GroupName: Default Local Group
   m_GUID: 684455a0195ca164da2777078d5901a9
   m_SerializeEntries:
-  - m_GUID: 5e440c1fea56fd64bb904cd9b82a846d
-    m_Address: Assets/TapTapDash/Map/TileMap/Prefab/3.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 793941ed26e04df4f98d3f8c6f826ef1
-    m_Address: Assets/TapTapDash/Map/TileMap
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: ba96575e41c08a943ba2053f8fc6f821
-    m_Address: Assets/TapTapDash/Map/TileMap/Prefab/1.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: cbaa1526f260e6541b987f6245ee10d1
-    m_Address: Assets/TapTapDash/Map/TileMap/Prefab/Text.txt
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: d9329029ebd979f49ad51daae6868c27
-    m_Address: Assets/TapTapDash/Map/TileMap/Prefab/2.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: e4d60cd7f23069f449e70359ac93aa23
-    m_Address: Assets/TapTapDash/Map/TileMap/Prefab/nextLevelConnector.prefab
+  - m_GUID: d56a6e9c7821e5f49bd64eafe8dbf784
+    m_Address: Assets/TapTapDash/Map/TileMap/Prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

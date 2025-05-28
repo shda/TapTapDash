@@ -206,5 +206,36 @@ namespace TapTapDash.Scripts
                     .FirstOrDefault(x => x.name == "Walk");
             }
         }
+
+        public bool IsPointInTileMap(Vector3 point)
+        {
+            var bounds = GetTilemapWorldBounds(tilemapGame);
+            return bounds.Contains(point);
+        }
+
+        private Bounds GetTilemapWorldBounds(Tilemap tilemap)
+        {
+            // Получаем границы в локальных координатах тайлмапа
+            tilemap.CompressBounds(); // Обновляем границы
+            BoundsInt cellBounds = tilemap.cellBounds;
+
+            // Если тайлмап пуст, возвращаем нулевые границы
+            if (cellBounds.size == Vector3Int.zero)
+                return new Bounds(Vector3.zero, Vector3.zero);
+
+            // Конвертируем ячейки в мировые координаты
+            Vector3 minWorld = tilemap.CellToWorld(cellBounds.min);
+            Vector3 maxWorld = tilemap.CellToWorld(cellBounds.max);
+
+            // Учитываем размер одного тайла (обычно 1x1, но может быть иначе)
+            Vector3 tileSize = tilemap.cellSize;
+            maxWorld += tileSize; // Добавляем размер последнего тайла
+
+            // Создаём Bounds, который охватывает всю тайлмапу
+            Bounds worldBounds = new Bounds();
+            worldBounds.SetMinMax(minWorld, maxWorld);
+
+            return worldBounds;
+        }
     }
 }

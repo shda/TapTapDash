@@ -3,34 +3,50 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "1.tmx",
+    "activeFile": "2_temp.tmx",
     "expandedProjectPaths": [
-        ".",
-        "Map/atlas"
+        "Map/atlas",
+        "."
     ],
     "fileStates": {
         "1.tmx": {
             "scale": 0.25,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": 1092,
-                "y": -936
+                "x": -2,
+                "y": -1028
+            }
+        },
+        "1_temp.tmx": {
+            "scale": 0.206884765625,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 1022.3082369601133,
+                "y": -623.5355204153884
             }
         },
         "2.tmx": {
-            "scale": 0.33,
+            "scale": 0.5,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 521.2121212121212,
-                "y": -400
+                "x": 355,
+                "y": 360
+            }
+        },
+        "2_temp.tmx": {
+            "scale": 0.206884765625,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 413.2735426008969,
+                "y": -1198.7349539768707
             }
         },
         "3.tmx": {
             "scale": 0.25,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 1040,
-                "y": -768
+                "x": 1024,
+                "y": -1026
             }
         },
         "E:/WorkingProjects/Prototypes/TapTapDash/Assets/TapTapDash/Map/atlas.tsx": {
@@ -51,10 +67,18 @@
         },
         "nextLevelConnector.tmx": {
             "scale": 0.5,
-            "selectedLayer": 1,
+            "selectedLayer": 0,
             "viewCenter": {
-                "x": 448,
+                "x": 447,
                 "y": -10
+            }
+        },
+        "temp.tmx": {
+            "scale": 0.206884765625,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 1022.3082369601133,
+                "y": -725.0413028085909
             }
         }
     },
@@ -64,16 +88,23 @@
     "map.tileHeight": 128,
     "map.tileWidth": 128,
     "openFiles": [
-        "1.tmx"
+        "1.tmx",
+        "2.tmx",
+        "3.tmx",
+        "1_temp.tmx",
+        "2_temp.tmx"
     ],
     "project": "mapProject.tiled-project",
     "property.type": "bool",
     "recentFiles": [
-        "1.tmx",
-        "map.tsx",
         "nextLevelConnector.tmx",
         "2.tmx",
+        "1_temp.tmx",
+        "2_temp.tmx",
         "3.tmx",
+        "1.tmx",
+        "temp.tmx",
+        "map.tsx",
         "E:/WorkingProjects/Prototypes/TapTapDash/Assets/TapTapDash/Map/map.tmx",
         "E:/WorkingProjects/Prototypes/TapTapDash/Assets/TapTapDash/Map/atlas.tsx"
     ],

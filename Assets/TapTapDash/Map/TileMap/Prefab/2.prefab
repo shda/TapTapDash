@@ -101,5 +101,3 @@ MonoBehaviour:
   map: {fileID: 1332960000595650234}
   tilemapService: {fileID: 683595381732083688}
   tilemapGame: {fileID: 4254223905828945701}
-  StartPosition: {x: 0, y: 0, z: 0}
-  FinishPosition: {x: 0, y: 0, z: 0}

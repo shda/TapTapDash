@@ -8,7 +8,7 @@ namespace TapTapDash.Scripts
         public static async UniTask<TObject> LoadAssetOrGetAsync<TObject>(this AssetReferenceT<TObject> sources) 
             where TObject : UnityEngine.Object
         {
-            if (sources.Asset == null)
+            if (!sources.Asset)
             {
                 while (!sources.IsDone)
                 {

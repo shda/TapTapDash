@@ -187,7 +187,6 @@ MonoBehaviour:
   inputHandler: {fileID: 712771682}
   gameOverScreen: {fileID: 7239139294210764818}
   rotateCameraByHeroDirection: {fileID: 712771684}
-  tileMapLevel: {fileID: 0}
   offsetHeroByGrid: {x: 0.6, y: 0.6, z: 0}
 --- !u!114 &712771684
 MonoBehaviour:
@@ -246,28 +245,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7a1ffa6482a4e15ac075ea9dc2d049d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levels:
-  - m_AssetGUID: ba96575e41c08a943ba2053f8fc6f821
-    m_SubObjectName: 
-    m_SubObjectGUID: 
-    m_SubObjectType: 
-    m_EditorAssetChanged: 0
-  - m_AssetGUID: d9329029ebd979f49ad51daae6868c27
-    m_SubObjectName: 
-    m_SubObjectGUID: 
-    m_SubObjectType: 
-    m_EditorAssetChanged: 0
-  - m_AssetGUID: 5e440c1fea56fd64bb904cd9b82a846d
-    m_SubObjectName: 
-    m_SubObjectGUID: 
-    m_SubObjectType: 
-    m_EditorAssetChanged: 0
-  levelConnector:
-    m_AssetGUID: e4d60cd7f23069f449e70359ac93aa23
-    m_SubObjectName: 
-    m_SubObjectGUID: 
-    m_SubObjectType: 
-    m_EditorAssetChanged: 0
+  hero: {fileID: 3767887379897918389}
+  maxLevelsLoad: 3
+  minDistanceToLoadNextLevel: 40
+  levels: {fileID: 11400000, guid: 74664256d9c08b34a88cecc78fd98d7e, type: 2}
+  _levelConnectorsPool:
+    prefab: {fileID: 2556951782381511521, guid: e4d60cd7f23069f449e70359ac93aa23, type: 3}
+    initialPoolSize: 3
 --- !u!1 &1170780680
 GameObject:
   m_ObjectHideFlags: 0

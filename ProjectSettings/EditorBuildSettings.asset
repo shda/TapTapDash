@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/TapTapDash/Scenes/SelectLevel.unity
+    guid: 08ca4f173cd785243b3d3d983b48ea11
+  - enabled: 1
     path: Assets/TapTapDash/Scenes/TapTapDash.unity
     guid: cf19ef2ca078a88418e69eb0f5092b09
   m_configObjects:
