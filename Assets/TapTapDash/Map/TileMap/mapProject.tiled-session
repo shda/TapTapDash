@@ -3,7 +3,7 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "2_temp.tmx",
+    "activeFile": "map.tsx",
     "expandedProjectPaths": [
         "Map/atlas",
         "."
@@ -67,7 +67,7 @@
         },
         "nextLevelConnector.tmx": {
             "scale": 0.5,
-            "selectedLayer": 0,
+            "selectedLayer": 1,
             "viewCenter": {
                 "x": 447,
                 "y": -10
@@ -89,22 +89,20 @@
     "map.tileWidth": 128,
     "openFiles": [
         "1.tmx",
-        "2.tmx",
-        "3.tmx",
-        "1_temp.tmx",
-        "2_temp.tmx"
+        "nextLevelConnector.tmx",
+        "map.tsx"
     ],
     "project": "mapProject.tiled-project",
     "property.type": "bool",
     "recentFiles": [
+        "1.tmx",
         "nextLevelConnector.tmx",
+        "map.tsx",
         "2.tmx",
         "1_temp.tmx",
         "2_temp.tmx",
         "3.tmx",
-        "1.tmx",
         "temp.tmx",
-        "map.tsx",
         "E:/WorkingProjects/Prototypes/TapTapDash/Assets/TapTapDash/Map/map.tmx",
         "E:/WorkingProjects/Prototypes/TapTapDash/Assets/TapTapDash/Map/atlas.tsx"
     ],

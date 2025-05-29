@@ -72,7 +72,7 @@ namespace TapTapDash.Scripts
             var foundAction = false;
 
             var tileMapLevel = levelLoader.GetTileMapByPositon(currentPosition);
-            while (!foundAction)
+            while (tileMapLevel && !foundAction)
             {
                 if (tileMapLevel.IsTile(currentPosition))
                 {
