@@ -24,12 +24,12 @@ namespace TapTapDash.Scripts
             {
                 // var level = levelsList.Levels[i];
                 var newButton = Instantiate(levelButtonPrefab, rootButtons);
-                newButton.SetLevel(i + 1);
+                newButton.SetLevel(i , levelsList.LevelNames[i]);
 
-                var i1 = i + 1;
+                var i1 = i;
                 newButton.OnClick = () =>
                 {
-                    SelectLevel.SelectedLevelIndex = i1 - 1;
+                    SelectLevel.SelectedLevelIndex = i1;
                     SceneManager.LoadScene(gameScene.Name);
                 };
             }

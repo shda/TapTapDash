@@ -16,10 +16,10 @@ namespace TapTapDash.Scripts
             OnClick?.Invoke();
         }
         
-        public void SetLevel(int levelNumber)
+        public void SetLevel(int index , string levelName)
         {
-            LevelNumber = levelNumber;
-            label.text = $"{LevelNumber}";
+            LevelNumber = index;
+            label.text = $"{levelName}";
         }
     }
 }

@@ -1,6 +1,4 @@
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading;
 using BlockBlast.Scripts.Common;
 using Cysharp.Threading.Tasks;
@@ -16,9 +14,10 @@ namespace TapTapDash.Scripts
         [SerializeField] private LevelsList levels;
         
         [SerializeField] private PoolGameObjectsComponent<TileMapLevel> _levelConnectorsPool;
-
-        private readonly Queue<TileMapLevel> _loadedLevels = new();
         
+        public bool IsInitStartLevel {get; private set;}
+        
+        private readonly Queue<TileMapLevel> _loadedLevels = new();
         private TileMapLevel _lastLoadedConnector;
         private CancellationTokenSource _cancelToken;
         
@@ -35,7 +34,6 @@ namespace TapTapDash.Scripts
             _cancelToken?.Cancel();
             _cancelToken = new CancellationTokenSource();
             UpdateAsync(_cancelToken.Token).Forget();
-
             return _lastLoadedConnector;
         }
         
@@ -68,7 +66,8 @@ namespace TapTapDash.Scripts
                     
                     Destroy(first.gameObject);
                 }
-                
+
+                IsInitStartLevel = true;
                 await UniTask.Yield();
             }
         }

@@ -8,6 +8,7 @@ namespace TapTapDash.Scripts
     public class Hero : MonoBehaviour
     {
         [SerializeField] private Transform sprite;
+        [SerializeField] private Transform shadow;
         [SerializeField] private float radiusCheckFail = 1.0f;
         [SerializeField] private float speedMoving = 1.0f;
         [SerializeField] private float jumpTime = 0.3f;
@@ -36,6 +37,7 @@ namespace TapTapDash.Scripts
             var angle = direction.ToAngle();
 
             sprite.transform.rotation = Quaternion.Euler(0,0,angle);
+            shadow.transform.rotation = Quaternion.Euler(0,0,angle);
         }
 
         public Collider2D GetCollider()
@@ -54,11 +56,16 @@ namespace TapTapDash.Scripts
         public async void StartJumpAsync()
         {
             IsInJump = true;
-            await transform.DOScale(new Vector3(1.3f, 1.3f, 11.3f), 0.1f);
+            transform.DOScale(new Vector3(1.3f, 1.3f, 1.3f), 0.1f);
+
+            var shadowSize = 0.8f;
+            await shadow.DOScale(new Vector3(shadowSize, shadowSize, shadowSize), 0.1f);
+            
             await UniTask.Delay(TimeSpan.FromSeconds(jumpTime));
             IsInJump = false;
             
-            await transform.DOScale(Vector3.one, 0.1f);
+            transform.DOScale(Vector3.one, 0.1f);
+            await shadow.DOScale(new Vector3(1, 1, 1), 0.1f);
         }
     }
 }

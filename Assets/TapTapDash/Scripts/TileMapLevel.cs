@@ -13,15 +13,9 @@ namespace TapTapDash.Scripts
         [SerializeField] private SuperMap map;
         [SerializeField] private Tilemap tilemapService; 
         [SerializeField] private Tilemap tilemapGame;
-
-      //  public Vector3 StartPosition;
-      //  public Vector3 FinishPosition;
-
+        
         private void Awake()
         {
-           // StartPosition = CalcStartPoint(tilemapService , "start");
-           // FinishPosition = CalcStartPoint(tilemapService ,"finish");
-           
            HideServiceLayer();
         }
 
@@ -42,54 +36,6 @@ namespace TapTapDash.Scripts
         {
             return CalcStartPoint(tilemapService , "finish");
         }
-      
-
-        private void Start()
-        {
-            /*
-            foreach (var pos in tilemapControl.cellBounds.allPositionsWithin)
-            {
-                var tile = tilemapControl.GetTile(pos);
-                
-                if (tile)
-                {
-                    if (tile is SuperTile superTile)
-                    {
-                        Matrix4x4 transformMatrix = tilemapControl.GetTransformMatrix(pos);
-                        Quaternion rotation = transformMatrix.rotation;
-                        if (rotation != Quaternion.identity)
-                        {
-                            Debug.Log($"Тайл в {pos} повёрнут на угол: {rotation.eulerAngles}");
-                        }
-                    }
-                }
-            }
-            */
-        }
-
-        public float GetAngleTile(Vector3 position)
-        {
-            return 0;
-            
-            var pos = tilemapService.WorldToCell(position);
-            var tile = tilemapService.GetTile(pos);
-
-            if (!tile)
-                return 0.0f;
-            
-            if (tile is SuperTile superTile)
-            {
-                /*
-                if (superTile.TryGetProperty("isJump", out CustomProperty property))
-                {
-                    return property.GetValueAsBool();
-                }
-                */
-            }
-
-            return 0;
-        }
-
         public bool TryGetIJump(Vector3 position)
         {
             var pos = tilemapGame.WorldToCell(position);
@@ -204,6 +150,16 @@ namespace TapTapDash.Scripts
             {
                 tilemapGame = transform.GetComponentsInChildren<Tilemap>()
                     .FirstOrDefault(x => x.name == "Walk");
+            }
+
+
+            if (tilemapGame)
+            {
+                var spriteMask = tilemapGame.GetComponent<SpriteMask>();
+                if(!spriteMask)
+                    spriteMask =  tilemapGame.gameObject.AddComponent<SpriteMask>();
+
+                spriteMask.maskSource = SpriteMask.MaskSource.SupportedRenderers;
             }
         }
 

@@ -37,6 +37,7 @@ namespace TapTapDash.Scripts
             var startConnector = await levelLoader.LoadLevelsStartOf(SelectLevel.SelectedLevelIndex);
             hero.transform.position = startConnector.GetStartPosition() + offsetHeroByGrid;
             
+            await UniTask.WaitUntil(() => levelLoader.IsInitStartLevel);
             _isInitialized = true;
             hero.IsMoving = true;
         }

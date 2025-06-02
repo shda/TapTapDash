@@ -3,7 +3,7 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "map.tsx",
+    "activeFile": "Sources/nextLevelConnector.tmx",
     "expandedProjectPaths": [
         "Map/atlas",
         "."
@@ -13,16 +13,16 @@
             "scale": 0.25,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": -2,
-                "y": -1028
+                "x": -1442,
+                "y": -2070
             }
         },
         "1_temp.tmx": {
             "scale": 0.206884765625,
-            "selectedLayer": 1,
+            "selectedLayer": 0,
             "viewCenter": {
-                "x": 1022.3082369601133,
-                "y": -623.5355204153884
+                "x": 311.76776020769415,
+                "y": -1234.9870191173
             }
         },
         "2.tmx": {
@@ -61,6 +61,89 @@
                 "y": 2392.6666666666665
             }
         },
+        "Sources/1.tmx": {
+            "scale": 0.206884765625,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 1022.3082369601133,
+                "y": 0
+            }
+        },
+        "Sources/20.tmx": {
+            "scale": 0.03125,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": -2864,
+                "y": 2848
+            }
+        },
+        "Sources/21.tmx": {
+            "scale": 0.206884765625,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 1022.3082369601133,
+                "y": 0
+            }
+        },
+        "Sources/22.tmx": {
+            "scale": 0.206884765625,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 1022.3082369601133,
+                "y": 0
+            }
+        },
+        "Sources/3.tmx": {
+            "scale": 0.206884765625,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 1022.3082369601133,
+                "y": 0
+            }
+        },
+        "Sources/32.tmx": {
+            "scale": 0.206884765625,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 1022.3082369601133,
+                "y": 0
+            }
+        },
+        "Sources/33.tmx": {
+            "scale": 0.206884765625,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 1022.3082369601133,
+                "y": 0
+            }
+        },
+        "Sources/34.tmx": {
+            "scale": 0.141015625,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 1024.709141274238,
+                "y": 0
+            }
+        },
+        "Sources/6.tmx": {
+            "scale": 0.206884765625,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 1022.3082369601133,
+                "y": 0
+            }
+        },
+        "Sources/map.tsx": {
+            "scaleInDock": 1
+        },
+        "Sources/nextLevelConnector.tmx": {
+            "scale": 0.33,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 707.5757575757576,
+                "y": 239.3939393939395
+            }
+        },
         "map.tsx": {
             "scaleInDock": 0.5,
             "scaleInEditor": 0.75
@@ -69,8 +152,8 @@
             "scale": 0.5,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": 447,
-                "y": -10
+                "x": 1024,
+                "y": 1025
             }
         },
         "temp.tmx": {
@@ -88,23 +171,23 @@
     "map.tileHeight": 128,
     "map.tileWidth": 128,
     "openFiles": [
-        "1.tmx",
-        "nextLevelConnector.tmx",
-        "map.tsx"
+        "Sources/nextLevelConnector.tmx"
     ],
     "project": "mapProject.tiled-project",
     "property.type": "bool",
     "recentFiles": [
+        "Sources/1.tmx",
+        "Sources/32.tmx",
+        "Sources/33.tmx",
+        "Sources/34.tmx",
+        "Sources/22.tmx",
+        "Sources/21.tmx",
+        "Sources/20.tmx",
+        "Sources/nextLevelConnector.tmx",
         "1.tmx",
-        "nextLevelConnector.tmx",
-        "map.tsx",
-        "2.tmx",
         "1_temp.tmx",
-        "2_temp.tmx",
-        "3.tmx",
-        "temp.tmx",
-        "E:/WorkingProjects/Prototypes/TapTapDash/Assets/TapTapDash/Map/map.tmx",
-        "E:/WorkingProjects/Prototypes/TapTapDash/Assets/TapTapDash/Map/atlas.tsx"
+        "nextLevelConnector.tmx",
+        "map.tsx"
     ],
     "tileset.lastUsedFormat": "tsx",
     "tileset.tileSize": {
