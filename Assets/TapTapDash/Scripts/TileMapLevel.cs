@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using SuperTiled2Unity;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.Tilemaps;
@@ -14,9 +15,22 @@ namespace TapTapDash.Scripts
         [SerializeField] private Tilemap tilemapService; 
         [SerializeField] private Tilemap tilemapGame;
         
+        [SerializeField] private TextMeshProUGUI levelNumberText;
+        
+        public int CurrentLevelIndex { get; private set; }
         private void Awake()
         {
            HideServiceLayer();
+        }
+
+        public void SetLevelNumber(int levelIndex)
+        {
+            if (levelNumberText)
+            {
+                CurrentLevelIndex = levelIndex;
+                levelNumberText.text = (levelIndex + 1).ToString();
+                levelNumberText.gameObject.SetActive(true);
+            }
         }
 
         public void HideServiceLayer()

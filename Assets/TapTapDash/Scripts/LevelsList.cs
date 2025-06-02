@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using TriInspector;
 using UnityEngine;
@@ -11,8 +13,23 @@ namespace TapTapDash.Scripts
         [SerializeField] private AssetReferenceT<GameObject>[] levels;
         
         [SerializeField] [ReadOnly] private string[] levelNames;
-        public AssetReferenceT<GameObject>[] Levels => levels;
+        //public AssetReferenceT<GameObject>[] Levels => levels;
         public string[] LevelNames => levelNames;
+        
+        public AssetReferenceT<GameObject> GetLevel(int index)
+        {
+            return levels[index % levels.Length];
+        }
+
+        public int CountLevels()
+        {
+            return levels.Length;
+        }
+        
+        public IEnumerable<AssetReferenceT<GameObject>> GetLevels()
+        {
+            return levels;
+        }
         
         [Button]
         private void Reverse()
@@ -22,7 +39,7 @@ namespace TapTapDash.Scripts
         
         private void OnValidate()
         {
-            levelNames = Levels.Select(x => x.editorAsset.name).ToArray();
+            levelNames = levels.Select(x => x.editorAsset.name).ToArray();
         }
     }
 }

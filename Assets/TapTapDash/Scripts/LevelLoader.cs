@@ -18,6 +18,7 @@ namespace TapTapDash.Scripts
         public bool IsInitStartLevel {get; private set;}
         
         private readonly Queue<TileMapLevel> _loadedLevels = new();
+        private readonly List<TileMapLevel> _connectors = new();
         private TileMapLevel _lastLoadedConnector;
         private CancellationTokenSource _cancelToken;
         
@@ -28,6 +29,9 @@ namespace TapTapDash.Scripts
             await PreloadConnectors();
             _lastLoadedConnector = _levelConnectorsPool.Get();
             _lastLoadedConnector.transform.position = Vector3.zero;
+            _lastLoadedConnector.SetLevelNumber(index);
+            
+            _connectors.Add(_lastLoadedConnector);
             
             CurrentLevelIndex = index;
             
@@ -52,27 +56,51 @@ namespace TapTapDash.Scripts
                     _lastLoadedConnector = _levelConnectorsPool.Get();
                     SetLevelToFinishPoint(level, _lastLoadedConnector);
                     
+                    
                     CurrentLevelIndex++;
+                    
+                    _lastLoadedConnector.SetLevelNumber(CurrentLevelIndex);
+                    _connectors.Add(_lastLoadedConnector);
                 }
                 
                 if(token.IsCancellationRequested)
                     return;
                 
-                if(Vector3.Distance(
-                       hero.transform.position , _lastLoadedConnector.transform.position) < minDistanceToLoadNextLevel)
-                {
-                    var first = _loadedLevels.Dequeue();
-                    first.gameObject.SetActive(false);
-                    
-                    Destroy(first.gameObject);
-                }
+                RemoveOldLevels();
+                UpdateLastLevel();
                 
-
                 IsInitStartLevel = true;
                 await UniTask.Yield();
             }
         }
-        
+
+        private void RemoveOldLevels()
+        {
+            if(Vector3.Distance(
+                   hero.transform.position , _lastLoadedConnector.transform.position) < minDistanceToLoadNextLevel)
+            {
+                var first = _loadedLevels.Dequeue();
+                first.gameObject.SetActive(false);
+                    
+                Destroy(first.gameObject);
+            }
+        }
+
+        private void UpdateLastLevel()
+        {
+            foreach (var connector in _connectors)
+            {
+                if (Vector3.Distance(connector.transform.position, hero.transform.position) < 7)
+                {
+                    if (connector.CurrentLevelIndex > SelectLevel.SelectedLevelIndex)
+                    {
+                        SelectLevel.SelectedLevelIndex = connector.CurrentLevelIndex;
+                        Debug.Log(connector.CurrentLevelIndex);
+                    }
+                }
+            }
+        }
+
         private async UniTask PreloadConnectors()
         {
             _levelConnectorsPool.Init();
@@ -82,7 +110,7 @@ namespace TapTapDash.Scripts
         {
             Debug.Log($"Loading level {levelIndex}");
             
-            var level = await levels.Levels[levelIndex].LoadAssetOrGetAsync();
+            var level = await levels.GetLevel(levelIndex).LoadAssetOrGetAsync();
             var newLevel = Instantiate(level).GetComponent<TileMapLevel>();
             
             SetLevelToFinishPoint(connector ,  newLevel);
@@ -102,7 +130,7 @@ namespace TapTapDash.Scripts
         {
             _cancelToken?.Cancel();
             
-            foreach (var level in levels.Levels)
+            foreach (var level in levels.GetLevels())
             {
                 level.ReleaseAsset();
             }

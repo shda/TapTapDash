@@ -20,7 +20,7 @@ namespace TapTapDash.Scripts
                 DestroyImmediate(children.gameObject);
             }
 
-            for (var i = 0; i < levelsList.Levels.Length; i++)
+            for (var i = 0; i < levelsList.CountLevels(); i++)
             {
                 // var level = levelsList.Levels[i];
                 var newButton = Instantiate(levelButtonPrefab, rootButtons);
