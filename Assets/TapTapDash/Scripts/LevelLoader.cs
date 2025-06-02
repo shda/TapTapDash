@@ -66,6 +66,7 @@ namespace TapTapDash.Scripts
                     
                     Destroy(first.gameObject);
                 }
+                
 
                 IsInitStartLevel = true;
                 await UniTask.Yield();

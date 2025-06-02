@@ -12,33 +12,45 @@ namespace TapTapDash.Scripts
         [SerializeField] private float radiusCheckFail = 1.0f;
         [SerializeField] private float speedMoving = 1.0f;
         [SerializeField] private float jumpTime = 0.3f;
+        [SerializeField] private float rotateSpeed = 1.0f;
         public Direction Direction { get; set; }
         
         private Vector2 _direction;
         public bool IsMoving { get; set; } = true;
         public bool IsInJump { get; set; } = false;
+        
+        private Quaternion _rotation = Quaternion.identity;
 
         private void Awake()
         {
-            SetDirection(Direction.Up);
+            SetDirection(Direction.Up , true);
         }
 
         private void Update()
         {
-           // ChackFail();
             MovingForward();
+            
+            var q = Quaternion.Lerp(sprite.transform.rotation , _rotation , Time.deltaTime * rotateSpeed);
+            sprite.transform.rotation = q;
+            shadow.transform.rotation = q;
         }
 
-        public void SetDirection(Direction direction)
+        public void SetDirection(Direction direction , bool isForce = false)
         {
             Direction = direction;
 
             _direction = direction.ToVector2();
             var angle = direction.ToAngle();
-
-            sprite.transform.rotation = Quaternion.Euler(0,0,angle);
-            shadow.transform.rotation = Quaternion.Euler(0,0,angle);
+            _rotation = Quaternion.Euler(0, 0, angle);
+            
+            if (isForce)
+            {
+                sprite.transform.rotation = _rotation;
+                shadow.transform.rotation = _rotation;
+            }
         }
+        
+        
 
         public Collider2D GetCollider()
         {

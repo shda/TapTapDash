@@ -125,7 +125,31 @@
                 "y": 0
             }
         },
+        "Sources/4.tmx": {
+            "scale": 0.206884765625,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 1022.3082369601133,
+                "y": 0
+            }
+        },
+        "Sources/5.tmx": {
+            "scale": 0.206884765625,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 1022.3082369601133,
+                "y": 0
+            }
+        },
         "Sources/6.tmx": {
+            "scale": 0.206884765625,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 1022.3082369601133,
+                "y": 0
+            }
+        },
+        "Sources/7.tmx": {
             "scale": 0.206884765625,
             "selectedLayer": 0,
             "viewCenter": {
@@ -176,6 +200,10 @@
     "project": "mapProject.tiled-project",
     "property.type": "bool",
     "recentFiles": [
+        "Sources/5.tmx",
+        "Sources/4.tmx",
+        "Sources/7.tmx",
+        "Sources/6.tmx",
         "Sources/1.tmx",
         "Sources/32.tmx",
         "Sources/33.tmx",
@@ -183,11 +211,7 @@
         "Sources/22.tmx",
         "Sources/21.tmx",
         "Sources/20.tmx",
-        "Sources/nextLevelConnector.tmx",
-        "1.tmx",
-        "1_temp.tmx",
-        "nextLevelConnector.tmx",
-        "map.tsx"
+        "Sources/nextLevelConnector.tmx"
     ],
     "tileset.lastUsedFormat": "tsx",
     "tileset.tileSize": {
