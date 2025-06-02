@@ -37,9 +37,11 @@ namespace TapTapDash.Scripts
             levels = levels.Reverse().ToArray();
         }
         
+#if UNITY_EDITOR
         private void OnValidate()
         {
             levelNames = levels.Select(x => x.editorAsset.name).ToArray();
         }
+#endif
     }
 }

@@ -888,6 +888,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 712771681}
     m_Modifications:
     - target: {fileID: 291144738933173786, guid: ab873c84f683bcc459bdae9bd77af048, type: 3}
+      propertyPath: jumpTime
+      value: 0.44
+      objectReference: {fileID: 0}
+    - target: {fileID: 291144738933173786, guid: ab873c84f683bcc459bdae9bd77af048, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
