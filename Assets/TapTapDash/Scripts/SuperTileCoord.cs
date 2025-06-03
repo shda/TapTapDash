@@ -13,5 +13,10 @@ namespace TapTapDash.Scripts
             Tile = tile;
             Position = position;
         }
+
+        public bool Equals(SuperTileCoord other)
+        {
+            return other.Position == Position;
+        }
     }
 }

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15b01247e5834fa08cb0087700bc3d26, type: 3}
   m_Name: '!AtlasMaker'
   m_EditorClassIdentifier: 
-  folder: {fileID: 102900000, guid: 43bed8dbdf3ba8b499e2a14f0e886a0b, type: 3}
+  folder: {fileID: 102900000, guid: fe903efc31fcbe44597fa98f4412a48b, type: 3}
   sprites:
   - {fileID: 2800000, guid: bac9a792ed830a4489fac664197be081, type: 3}
   - {fileID: 2800000, guid: 466ffafa215af8e40a4618c1e98e8e9a, type: 3}
@@ -83,4 +83,12 @@ MonoBehaviour:
   - {fileID: 2800000, guid: ea9a750f2f50b8b40984712f261125c9, type: 3}
   - {fileID: 2800000, guid: 7ddd6a2d567112f40a39c7c769f6f21c, type: 3}
   - {fileID: 2800000, guid: 529c9a85529ce8f40830b84c7c39fb4e, type: 3}
+  - {fileID: 2800000, guid: cacf866c9de60c2489efeb83ab91b5f7, type: 3}
+  - {fileID: 2800000, guid: e077fff314905fc4fa0f4088164cfc4f, type: 3}
+  - {fileID: 2800000, guid: 42e2ee7032508f745aac094dad7cc248, type: 3}
+  - {fileID: 2800000, guid: ceb174efccedb0c438f799f8d0f2f8b9, type: 3}
+  - {fileID: 2800000, guid: 44b31985fb3bbb94aa79cb4739743f2a, type: 3}
+  - {fileID: 2800000, guid: cfc5f82069851c840afa1eeb60cedc4d, type: 3}
+  - {fileID: 2800000, guid: 644e7c30c3b8ddf4c9216ed1ecf14348, type: 3}
+  - {fileID: 2800000, guid: c74ee8382d53b3246866e383e4ae9945, type: 3}
   resultTexture: {fileID: 2800000, guid: 952a2be4e1a361348aec3b8aa72ab965, type: 3}

@@ -78,6 +78,19 @@ namespace TapTapDash.Scripts
             return tile;
         }
 
+        public SuperTileCoord GetByTileWorldOrNull(Vector3 position)
+        {
+            var pos = tilemapGame.WorldToCell(position);
+            var tile = tilemapGame.GetTile(pos);
+
+            if (tile is SuperTile superTile)
+            {
+                return new SuperTileCoord(superTile , pos);
+            }
+
+            return null;
+        }
+
         public bool TryGetDirectionByTileWorld(Vector3 position , out Direction direction)
         {
             direction = Direction.Left;

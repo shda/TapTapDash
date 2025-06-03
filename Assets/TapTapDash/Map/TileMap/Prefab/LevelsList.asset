@@ -13,6 +13,11 @@ MonoBehaviour:
   m_Name: LevelsList
   m_EditorClassIdentifier: 
   levels:
+  - m_AssetGUID: 84c8db52b0f694949805f60aa63cbc5b
+    m_SubObjectName: 
+    m_SubObjectGUID: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
   - m_AssetGUID: 2d859b7cf7a79b548b55ac8a51dd68fe
     m_SubObjectName: 
     m_SubObjectGUID: 
@@ -89,6 +94,7 @@ MonoBehaviour:
     m_SubObjectType: 
     m_EditorAssetChanged: 0
   levelNames:
+  - test
   - 1
   - 2
   - 3

@@ -49,9 +49,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: 2332995628160812336}
   shadow: {fileID: 2528450093720295774}
-  radiusCheckFail: 0.06
+  radiusCheckFail: 0.04
   speedMoving: 4
-  jumpTime: 0.47
+  rotateSpeed: 15
+  jumpDistance: 2.2
 --- !u!1 &2865955222224563421
 GameObject:
   m_ObjectHideFlags: 0

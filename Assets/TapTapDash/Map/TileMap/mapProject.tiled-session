@@ -3,7 +3,7 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "Sources/8.tmx",
+    "activeFile": "Sources/test.tmx",
     "expandedProjectPaths": [
         "Map/atlas",
         "."
@@ -76,8 +76,8 @@
             "scale": 0.206884765625,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 855.5487373141375,
-                "y": 256.18126032570194
+                "x": 1048.8930847297618,
+                "y": 130.5074345055466
             }
         },
         "Sources/2.tmx": {
@@ -185,7 +185,8 @@
             }
         },
         "Sources/map.tsx": {
-            "scaleInDock": 0.33
+            "scaleInDock": 0.33,
+            "scaleInEditor": 0.5
         },
         "Sources/nextLevelConnector.tmx": {
             "scale": 0.125,
@@ -193,6 +194,14 @@
             "viewCenter": {
                 "x": 384,
                 "y": 316
+            }
+        },
+        "Sources/test.tmx": {
+            "scale": 0.25,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 1304,
+                "y": 4804
             }
         },
         "map.tsx": {
@@ -222,26 +231,24 @@
     "map.tileHeight": 128,
     "map.tileWidth": 128,
     "openFiles": [
-        "Sources/3.tmx",
-        "Sources/nextLevelConnector.tmx",
-        "C:/Users/Goust/Downloads/2.tmx",
-        "Sources/8.tmx"
+        "Sources/test.tmx",
+        "Sources/map.tsx"
     ],
     "project": "mapProject.tiled-project",
     "property.type": "float",
     "recentFiles": [
-        "Sources/8.tmx",
-        "C:/Users/Goust/Downloads/2.tmx",
-        "Sources/nextLevelConnector.tmx",
-        "Sources/3.tmx",
-        "Sources/5.tmx",
-        "Sources/4.tmx",
+        "Sources/map.tsx",
+        "Sources/test.tmx",
         "Sources/7.tmx",
         "Sources/6.tmx",
+        "Sources/5.tmx",
+        "Sources/4.tmx",
+        "Sources/3.tmx",
+        "Sources/2.tmx",
         "Sources/1.tmx",
-        "Sources/32.tmx",
-        "Sources/33.tmx",
-        "Sources/34.tmx"
+        "Sources/8.tmx",
+        "C:/Users/Goust/Downloads/2.tmx",
+        "Sources/nextLevelConnector.tmx"
     ],
     "tileset.lastUsedFormat": "tsx",
     "tileset.tileSize": {

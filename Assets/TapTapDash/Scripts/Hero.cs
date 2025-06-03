@@ -95,5 +95,10 @@ namespace TapTapDash.Scripts
         {
             speedMoving = speed;
         }
+
+        public void AddSpeed(float addSpeed)
+        {
+            speedMoving += addSpeed;
+        }
     }
 }

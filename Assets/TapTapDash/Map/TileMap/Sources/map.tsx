@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tileset version="1.10" tiledversion="1.11.2" name="map" tilewidth="128" tileheight="128" tilecount="72" columns="8">
- <image source="Map/atlas/map.png" width="1024" height="1152"/>
+<tileset version="1.10" tiledversion="1.11.2" name="map" tilewidth="128" tileheight="128" tilecount="80" columns="8">
+ <image source="Map/atlas/map.png" width="1024" height="1280"/>
  <tile id="0">
   <properties>
    <property name="name" value="finish"/>
@@ -552,5 +552,82 @@
     <polygon points="0,0 125,0.666667 125.667,46.3333 -0.666667,46.6667"/>
    </object>
   </objectgroup>
+ </tile>
+ <tile id="69">
+  <properties>
+   <property name="addSpeed" type="float" value="0.5"/>
+   <property name="direction" value="left"/>
+  </properties>
+  <objectgroup draworder="index" id="2">
+   <object id="1" x="0" y="0" width="128" height="128"/>
+  </objectgroup>
+ </tile>
+ <tile id="70">
+  <properties>
+   <property name="addSpeed" type="float" value="0.5"/>
+   <property name="direction" value="up"/>
+  </properties>
+  <objectgroup draworder="index" id="2">
+   <object id="1" x="0" y="0" width="128" height="128"/>
+  </objectgroup>
+ </tile>
+ <tile id="71">
+  <properties>
+   <property name="addSpeed" type="float" value="0.5"/>
+   <property name="direction" value="right"/>
+  </properties>
+  <objectgroup draworder="index" id="2">
+   <object id="1" x="0" y="0" width="128" height="128"/>
+  </objectgroup>
+ </tile>
+ <tile id="72">
+  <properties>
+   <property name="addSpeed" type="float" value="0.5"/>
+   <property name="direction" value="down"/>
+  </properties>
+  <objectgroup draworder="index" id="2">
+   <object id="1" x="0" y="0" width="128" height="128"/>
+  </objectgroup>
+ </tile>
+ <tile id="73">
+  <properties>
+   <property name="addSpeed" type="float" value="-0.5"/>
+   <property name="direction" value="left"/>
+  </properties>
+  <objectgroup draworder="index" id="2">
+   <object id="1" x="0" y="0" width="128" height="128"/>
+  </objectgroup>
+ </tile>
+ <tile id="74">
+  <properties>
+   <property name="addSpeed" type="float" value="-0.5"/>
+   <property name="direction" value="up"/>
+  </properties>
+  <objectgroup draworder="index" id="2">
+   <object id="1" x="0" y="0" width="128" height="128"/>
+  </objectgroup>
+ </tile>
+ <tile id="75">
+  <properties>
+   <property name="addSpeed" type="float" value="-0.5"/>
+   <property name="direction" value="right"/>
+  </properties>
+  <objectgroup draworder="index" id="2">
+   <object id="1" x="0" y="0" width="128" height="128"/>
+  </objectgroup>
+ </tile>
+ <tile id="76">
+  <properties>
+   <property name="addSpeed" type="float" value="-0.5"/>
+   <property name="direction" value="down"/>
+  </properties>
+  <objectgroup draworder="index" id="2">
+   <object id="1" x="0" y="0" width="128" height="128"/>
+  </objectgroup>
+ </tile>
+ <tile id="77">
+  <properties>
+   <property name="speedMod" type="float" value="0"/>
+  </properties>
  </tile>
 </tileset>
