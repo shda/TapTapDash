@@ -12,7 +12,6 @@ namespace TapTapDash.Scripts
         [SerializeField] private int maxLevelsLoad = 3;
         [SerializeField] private float minDistanceToLoadNextLevel = 100f;
         [SerializeField] private LevelsList levels;
-        
         [SerializeField] private PoolGameObjectsComponent<TileMapLevel> _levelConnectorsPool;
         
         public bool IsInitStartLevel {get; private set;}

@@ -123,6 +123,17 @@ SpriteMask:
   m_IsCustomRangeActive: 0
   m_SpriteSortPoint: 0
   m_MaskSource: 1
+--- !u!114 &3158948565952422136 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -7705316553464297360, guid: 0c6d2c606b52a92419cf2fb773a2e1f3, type: 3}
+  m_PrefabInstance: {fileID: 4523832362219350152}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9063011916558393865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60eadddeab0d66d4084aca14d14cbcfc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &6164261150835284290 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7731619857015714250, guid: 0c6d2c606b52a92419cf2fb773a2e1f3, type: 3}
@@ -164,3 +175,5 @@ MonoBehaviour:
   map: {fileID: 6164261150835284290}
   tilemapService: {fileID: 7894983538384180234}
   tilemapGame: {fileID: 8301036380982721374}
+  properties: {fileID: 3158948565952422136}
+  levelNumberText: {fileID: 0}

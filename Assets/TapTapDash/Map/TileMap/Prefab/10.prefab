@@ -83,6 +83,8 @@ MonoBehaviour:
   map: {fileID: 6690095153831986136}
   tilemapService: {fileID: 3064287242818672415}
   tilemapGame: {fileID: 7710194581610214608}
+  properties: {fileID: 7139399752216562562}
+  levelNumberText: {fileID: 0}
 --- !u!1839735485 &3064287242818672415 stripped
 Tilemap:
   m_CorrespondingSourceObject: {fileID: -5277768825904991451, guid: 071f2362ff5d3cd42b96603d2776e7c8, type: 3}
@@ -157,6 +159,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9afdeaae1bb27d6418d5d8cd5165faed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7139399752216562562 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9174727493831880632, guid: 071f2362ff5d3cd42b96603d2776e7c8, type: 3}
+  m_PrefabInstance: {fileID: 2037615172481885242}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2495013755521081281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60eadddeab0d66d4084aca14d14cbcfc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1839735485 &7710194581610214608 stripped

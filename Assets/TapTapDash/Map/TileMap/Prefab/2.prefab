@@ -83,6 +83,19 @@ MonoBehaviour:
   map: {fileID: 8589598276756969023}
   tilemapService: {fileID: 7797802923909183341}
   tilemapGame: {fileID: 6791929664161861536}
+  properties: {fileID: 3803385808846293421}
+  levelNumberText: {fileID: 0}
+--- !u!114 &3803385808846293421 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2685607900943399773, guid: a67bba1299cf58842ab624aea074dca9, type: 3}
+  m_PrefabInstance: {fileID: 1264778214949860080}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1335760567212773935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60eadddeab0d66d4084aca14d14cbcfc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6033143377162171014 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -4451980880222797706, guid: a67bba1299cf58842ab624aea074dca9, type: 3}

@@ -63,6 +63,17 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 8942558275925201326}
   m_SourcePrefab: {fileID: -2695619058785784247, guid: ae45eebba5986814d8006ce434c9165d, type: 3}
+--- !u!114 &679304452439865055 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -563644384251247467, guid: ae45eebba5986814d8006ce434c9165d, type: 3}
+  m_PrefabInstance: {fileID: 8160759640796918346}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1475113817325766373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60eadddeab0d66d4084aca14d14cbcfc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1475113817325766373 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7293719871566804143, guid: ae45eebba5986814d8006ce434c9165d, type: 3}
@@ -83,6 +94,8 @@ MonoBehaviour:
   map: {fileID: 6765937285314273602}
   tilemapService: {fileID: 5265598383133642879}
   tilemapGame: {fileID: 7462080437348574250}
+  properties: {fileID: 679304452439865055}
+  levelNumberText: {fileID: 0}
 --- !u!1839735485 &5265598383133642879 stripped
 Tilemap:
   m_CorrespondingSourceObject: {fileID: 4058867459527418421, guid: ae45eebba5986814d8006ce434c9165d, type: 3}

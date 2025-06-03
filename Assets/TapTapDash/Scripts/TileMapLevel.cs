@@ -4,7 +4,6 @@ using System.Linq;
 using SuperTiled2Unity;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.Tilemaps;
 
 namespace TapTapDash.Scripts
@@ -14,9 +13,12 @@ namespace TapTapDash.Scripts
         [SerializeField] private SuperMap map;
         [SerializeField] private Tilemap tilemapService; 
         [SerializeField] private Tilemap tilemapGame;
+        [SerializeField] private SuperCustomProperties properties;
         
+        [Header("Optional")]
         [SerializeField] private TextMeshProUGUI levelNumberText;
-        
+
+        public SuperCustomProperties Properties => properties;
         public int CurrentLevelIndex { get; private set; }
         private void Awake()
         {
@@ -174,6 +176,11 @@ namespace TapTapDash.Scripts
                     spriteMask =  tilemapGame.gameObject.AddComponent<SpriteMask>();
 
                 spriteMask.maskSource = SpriteMask.MaskSource.SupportedRenderers;
+            }
+
+            if (!properties)
+            {
+                properties = GetComponent<SuperCustomProperties>();
             }
         }
 

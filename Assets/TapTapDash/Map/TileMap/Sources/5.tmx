@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="left-down" width="30" height="20" tilewidth="128" tileheight="128" infinite="1" nextlayerid="3" nextobjectid="1">
+ <properties>
+  <property name="speed" type="float" value="6"/>
+ </properties>
  <tileset firstgid="1" source="map.tsx"/>
  <layer id="1" name="Walk" width="30" height="20">
   <data encoding="csv">

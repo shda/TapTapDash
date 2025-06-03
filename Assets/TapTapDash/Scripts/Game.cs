@@ -1,3 +1,4 @@
+using System.Threading;
 using BlockBlast.Scripts.Game;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
@@ -13,7 +14,7 @@ namespace TapTapDash.Scripts
         [SerializeField] private GameOverScreen gameOverScreen;
         [SerializeField] private RotateCameraByHeroDirection rotateCameraByHeroDirection;
         [SerializeField] private Vector3 offsetHeroByGrid;
-
+        
         private bool _isInitialized;
 
         private void Awake()
@@ -54,7 +55,7 @@ namespace TapTapDash.Scripts
 
             if (hero.IsInJump)
                 return;
-
+            
             var coll = hero.GetCollider();
             if (!coll && hero.IsMoving)
             {
@@ -62,7 +63,7 @@ namespace TapTapDash.Scripts
                 gameOverScreen.gameObject.SetActive(true);
             }
         }
-
+        
         private void OnTap()
         {
             if (hero.IsInJump)
