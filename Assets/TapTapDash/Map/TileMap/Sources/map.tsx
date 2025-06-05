@@ -555,7 +555,7 @@
  </tile>
  <tile id="69">
   <properties>
-   <property name="addSpeed" type="float" value="0.5"/>
+   <property name="addSpeed" type="float" value="-0.5"/>
    <property name="direction" value="left"/>
   </properties>
   <objectgroup draworder="index" id="2">
@@ -564,7 +564,7 @@
  </tile>
  <tile id="70">
   <properties>
-   <property name="addSpeed" type="float" value="0.5"/>
+   <property name="addSpeed" type="float" value="-0.5"/>
    <property name="direction" value="up"/>
   </properties>
   <objectgroup draworder="index" id="2">
@@ -573,7 +573,7 @@
  </tile>
  <tile id="71">
   <properties>
-   <property name="addSpeed" type="float" value="0.5"/>
+   <property name="addSpeed" type="float" value="-0.5"/>
    <property name="direction" value="right"/>
   </properties>
   <objectgroup draworder="index" id="2">
@@ -582,7 +582,7 @@
  </tile>
  <tile id="72">
   <properties>
-   <property name="addSpeed" type="float" value="0.5"/>
+   <property name="addSpeed" type="float" value="-0.5"/>
    <property name="direction" value="down"/>
   </properties>
   <objectgroup draworder="index" id="2">
@@ -591,7 +591,7 @@
  </tile>
  <tile id="73">
   <properties>
-   <property name="addSpeed" type="float" value="-0.5"/>
+   <property name="addSpeed" type="float" value="0.5"/>
    <property name="direction" value="left"/>
   </properties>
   <objectgroup draworder="index" id="2">
@@ -600,7 +600,7 @@
  </tile>
  <tile id="74">
   <properties>
-   <property name="addSpeed" type="float" value="-0.5"/>
+   <property name="addSpeed" type="float" value="0.5"/>
    <property name="direction" value="up"/>
   </properties>
   <objectgroup draworder="index" id="2">
@@ -609,7 +609,7 @@
  </tile>
  <tile id="75">
   <properties>
-   <property name="addSpeed" type="float" value="-0.5"/>
+   <property name="addSpeed" type="float" value="0.5"/>
    <property name="direction" value="right"/>
   </properties>
   <objectgroup draworder="index" id="2">
@@ -618,7 +618,7 @@
  </tile>
  <tile id="76">
   <properties>
-   <property name="addSpeed" type="float" value="-0.5"/>
+   <property name="addSpeed" type="float" value="0.5"/>
    <property name="direction" value="down"/>
   </properties>
   <objectgroup draworder="index" id="2">

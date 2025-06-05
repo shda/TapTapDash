@@ -1,6 +1,7 @@
 using System.Threading;
 using BlockBlast.Scripts.Game;
 using Cysharp.Threading.Tasks;
+using Eflatun.SceneReference;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -14,6 +15,7 @@ namespace TapTapDash.Scripts
         [SerializeField] private GameOverScreen gameOverScreen;
         [SerializeField] private RotateCameraByHeroDirection rotateCameraByHeroDirection;
         [SerializeField] private Vector3 offsetHeroByGrid;
+        [SerializeField] private SceneReference selectLevel;
         
         private bool _isInitialized;
 
@@ -21,6 +23,10 @@ namespace TapTapDash.Scripts
         {
             gameOverScreen.gameObject.SetActive(false);
             gameOverScreen.OnRestartGame = () => OnRestartGame();
+            gameOverScreen.OnSelectLevel = () =>
+            {
+                SceneManager.LoadScene(selectLevel.Name);
+            };
 
             inputHandler.OnTap = OnTap;
         }

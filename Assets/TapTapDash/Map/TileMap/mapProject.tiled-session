@@ -3,10 +3,10 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "Sources/test.tmx",
+    "activeFile": "Sources/19.tmx",
     "expandedProjectPaths": [
-        "Map/atlas",
-        "."
+        ".",
+        "Map/atlas"
     ],
     "fileStates": {
         "1.tmx": {
@@ -49,6 +49,14 @@
                 "y": -1026
             }
         },
+        "C:/Users/Goust/Downloads/19.tmx": {
+            "scale": 0.206884765625,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 1082.7283455274958,
+                "y": -514.7793249940996
+            }
+        },
         "C:/Users/Goust/Downloads/2.tmx": {
             "scale": 0.5,
             "selectedLayer": 0,
@@ -76,11 +84,27 @@
             "scale": 0.206884765625,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 1048.8930847297618,
-                "y": 130.5074345055466
+                "x": 1024.7250413028087,
+                "y": -2.4168043426952863
             }
         },
-        "Sources/2.tmx": {
+        "Sources/13.tmx": {
+            "scale": 0.75,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 1024,
+                "y": -0.6666666666666288
+            }
+        },
+        "Sources/15.tmx": {
+            "scale": 0.13792317708333332,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 1022.3082369601134,
+                "y": -1022.3082369601134
+            }
+        },
+        "Sources/17.tmx": {
             "scale": 0.206884765625,
             "selectedLayer": 0,
             "viewCenter": {
@@ -88,12 +112,28 @@
                 "y": 0
             }
         },
-        "Sources/20.tmx": {
-            "scale": 0.03125,
+        "Sources/19.tmx": {
+            "scale": 0.206884765625,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": -2864,
-                "y": 2848
+                "x": 1474.250649044135,
+                "y": -638.0363464715601
+            }
+        },
+        "Sources/2.tmx": {
+            "scale": 0.206884765625,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 1938.277082841633,
+                "y": -502.6953032806232
+            }
+        },
+        "Sources/20.tmx": {
+            "scale": 0.25,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 992,
+                "y": -692
             }
         },
         "Sources/21.tmx": {
@@ -148,8 +188,8 @@
             "scale": 0.206884765625,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": 1019.8914326174179,
-                "y": 0
+                "x": 1237.4038234599952,
+                "y": -2.4168043426952863
             }
         },
         "Sources/5.tmx": {
@@ -200,8 +240,8 @@
             "scale": 0.25,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 1304,
-                "y": 4804
+                "x": 1204,
+                "y": -1026
             }
         },
         "map.tsx": {
@@ -231,24 +271,23 @@
     "map.tileHeight": 128,
     "map.tileWidth": 128,
     "openFiles": [
-        "Sources/test.tmx",
-        "Sources/map.tsx"
+        "Sources/19.tmx"
     ],
     "project": "mapProject.tiled-project",
     "property.type": "float",
     "recentFiles": [
+        "Sources/19.tmx",
+        "C:/Users/Goust/Downloads/19.tmx",
+        "Sources/13.tmx",
         "Sources/map.tsx",
-        "Sources/test.tmx",
-        "Sources/7.tmx",
-        "Sources/6.tmx",
-        "Sources/5.tmx",
-        "Sources/4.tmx",
-        "Sources/3.tmx",
-        "Sources/2.tmx",
         "Sources/1.tmx",
         "Sources/8.tmx",
-        "C:/Users/Goust/Downloads/2.tmx",
-        "Sources/nextLevelConnector.tmx"
+        "Sources/4.tmx",
+        "Sources/20.tmx",
+        "Sources/17.tmx",
+        "Sources/15.tmx",
+        "Sources/7.tmx",
+        "Sources/3.tmx"
     ],
     "tileset.lastUsedFormat": "tsx",
     "tileset.tileSize": {
