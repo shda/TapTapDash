@@ -220,7 +220,6 @@ GameObject:
   - component: {fileID: 712771682}
   - component: {fileID: 712771687}
   - component: {fileID: 712771685}
-  - component: {fileID: 712771686}
   m_Layer: 0
   m_Name: Game
   m_TagString: Untagged
@@ -273,15 +272,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abb51d3f4eec4f1d8d4d24a5d162f46a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelLoader: {fileID: 976631160}
+  selectLevel:
+    asset: {fileID: 102900000, guid: 08ca4f173cd785243b3d3d983b48ea11, type: 3}
+    guid: 08ca4f173cd785243b3d3d983b48ea11
+  loadingLevelInRuntime: {fileID: 976631160}
   hero: {fileID: 3767887379897918389}
   inputHandler: {fileID: 712771682}
   gameOverScreen: {fileID: 7239139294210764818}
   rotateCameraByHeroDirection: {fileID: 712771684}
-  offsetHeroByGrid: {x: 0.6, y: 0.6, z: 0}
-  selectLevel:
-    asset: {fileID: 102900000, guid: 08ca4f173cd785243b3d3d983b48ea11, type: 3}
-    guid: 08ca4f173cd785243b3d3d983b48ea11
+  offsetHeroToStartTile: {x: 0.6, y: 0.6, z: 0}
 --- !u!114 &712771684
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -308,35 +307,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hero: {fileID: 3767887379897918389}
---- !u!114 &712771686
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 712771680}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37b15f07b29448f08dfea761212c79ee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hero: {fileID: 3767887379897918389}
-  levelLoader: {fileID: 976631160}
-  OnHeroEnterNewLevel:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 712771685}
-        m_TargetAssemblyTypeName: TapTapDash.Scripts.ChangeSpeedFromTileMap, TapTapDash.Game
-        m_MethodName: ChangeSpeedIfNeed
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+  loadingLevelInRuntime: {fileID: 976631160}
 --- !u!114 &712771687
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -350,7 +321,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hero: {fileID: 3767887379897918389}
-  levelLoader: {fileID: 976631160}
+  loadingLevelInRuntime: {fileID: 976631160}
 --- !u!1 &853152305
 GameObject:
   m_ObjectHideFlags: 0

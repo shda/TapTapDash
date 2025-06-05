@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace TapTapDash.Scripts
 {
-    public class LevelLoader : MonoBehaviour
+    public class LoadingLevelInRuntime : MonoBehaviour
     {
         [SerializeField] private Hero hero;
         [SerializeField] private int maxLevelsLoad = 3;

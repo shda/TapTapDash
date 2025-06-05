@@ -1,24 +1,22 @@
-using System;
 using Cysharp.Threading.Tasks;
+using SuperTiled2Unity;
 using UnityEngine;
-using UnityEngine.Events;
+using UnityEngine.Serialization;
 
 namespace TapTapDash.Scripts
 {
-    public class EventHeroEnterInNewTileMap : MonoBehaviour
+    public class ChangeSpeedEnterOntoMap : MonoBehaviour
     {
         [SerializeField] private Hero hero;
-        [SerializeField] private LevelLoader levelLoader;
+        [FormerlySerializedAs("levelLoader")] [SerializeField] private LoadingLevelInRuntime loadingLevelInRuntime;
 
         private TileMapLevel _lastEnterLevel;
-
-        public UnityEvent<TileMapLevel> OnHeroEnterNewLevel;
         
         private void Start()
         {
             CheckSpeedInMapAsync().Forget();
         }
-        
+
         private async UniTask CheckSpeedInMapAsync()
         {
             while (!destroyCancellationToken.IsCancellationRequested)
@@ -27,15 +25,28 @@ namespace TapTapDash.Scripts
                 await UniTask.Delay(100);
             }
         }
-        
+
         private void ChangeSpeedIfNeed()
         {
             var currentPosition = hero.transform.position;
-            var tileMapLevel = levelLoader.GetTileMapByPositon(currentPosition);
+            var tileMapLevel = loadingLevelInRuntime.GetTileMapByPositon(currentPosition);
             if (tileMapLevel && tileMapLevel != _lastEnterLevel)
             {
                 _lastEnterLevel = tileMapLevel;
-                OnHeroEnterNewLevel?.Invoke(tileMapLevel);
+                ChangeSpeedIfNeed(tileMapLevel);
+            }
+        }
+
+
+        public void ChangeSpeedIfNeed(TileMapLevel tileMapLevel)
+        {
+            if (tileMapLevel.Properties)
+            {
+                if (tileMapLevel.Properties.TryGetCustomProperty("speed", out var customProperty))
+                {
+                    var speed = customProperty.GetValueAsFloat();
+                    hero.SetSpeed(speed);
+                }
             }
         }
     }

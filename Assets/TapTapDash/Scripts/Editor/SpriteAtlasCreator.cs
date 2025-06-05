@@ -11,41 +11,6 @@ namespace TapTapDash.Scripts.Editor
         private const int ATLAS_WIDTH = 1024;
         private const int MAX_ATLAS_HEIGHT = 8192;
         
-
-        [MenuItem("Tools/Create Grid Atlas (128x128 cells)")]
-        public static void CreateGridAtlas()
-        {
-            // Получаем выделенные спрайты
-            Object[] selectedObjects = Selection.objects;
-            if (selectedObjects.Length == 0)
-            {
-                Debug.LogError("No sprites selected!");
-                return;
-            }
-
-            // Собираем все спрайты
-            List<Texture2D> sprites = new List<Texture2D>();
-            foreach (Object obj in selectedObjects)
-            {
-                if (obj is Sprite sprite)
-                {
-                    sprites.Add(GetReadableTexture(sprite));
-                }
-                else if (obj is Texture2D texture)
-                {
-                    sprites.Add(GetReadableTexture(texture));
-                }
-            }
-
-            if (sprites.Count == 0)
-            {
-                Debug.LogError("No valid sprites found!");
-                return;
-            }
-
-            CreateTexture(sprites);
-        }
-
         public static void CreateTexture(List<Texture2D> sprites , string savePathCustom = "")
         {
             // Рассчитываем необходимую высоту атласа
@@ -112,31 +77,6 @@ namespace TapTapDash.Scripts.Editor
 
             
         }
-
-        /*
-        // Рассчитываем минимально необходимый размер атласа
-        private static int CalculateAtlasSize(int spriteCount)
-        {
-            int size = INITIAL_ATLAS_SIZE;
-            while (true)
-            {
-                int cellsAvailable = (size / CELL_SIZE) * (size / CELL_SIZE);
-                if (cellsAvailable >= spriteCount || size >= MAX_ATLAS_SIZE)
-                    break;
-            
-                size *= 2;
-            }
-
-            if (size > MAX_ATLAS_SIZE)
-            {
-                Debug.LogError($"Cannot fit all sprites in {MAX_ATLAS_SIZE}x{MAX_ATLAS_SIZE} atlas!");
-                return MAX_ATLAS_SIZE;
-            }
-
-            return size;
-        }
-        */
-
         // Создаем читаемую текстуру из спрайта
         private static Texture2D GetReadableTexture(Sprite sprite)
         {

@@ -1,4 +1,3 @@
-using System.Threading;
 using BlockBlast.Scripts.Game;
 using Cysharp.Threading.Tasks;
 using Eflatun.SceneReference;
@@ -9,13 +8,14 @@ namespace TapTapDash.Scripts
 {
     public class Game : MonoBehaviour
     {
-        [SerializeField] private LevelLoader levelLoader;
+        [SerializeField] private SceneReference selectLevel;
+        [SerializeField] private LoadingLevelInRuntime loadingLevelInRuntime;
         [SerializeField] private Hero hero;
         [SerializeField] private InputHandler inputHandler;
         [SerializeField] private GameOverScreen gameOverScreen;
         [SerializeField] private RotateCameraByHeroDirection rotateCameraByHeroDirection;
-        [SerializeField] private Vector3 offsetHeroByGrid;
-        [SerializeField] private SceneReference selectLevel;
+        [SerializeField] private Vector3 offsetHeroToStartTile;
+        
         
         private bool _isInitialized;
 
@@ -41,10 +41,10 @@ namespace TapTapDash.Scripts
             hero.IsMoving = false;
             _isInitialized = false;
             
-            var startConnector = await levelLoader.LoadLevelsStartOf(SelectLevel.SelectedLevelIndex);
-            hero.transform.position = startConnector.GetStartPosition() + offsetHeroByGrid;
+            var startConnector = await loadingLevelInRuntime.LoadLevelsStartOf(SelectLevel.SelectedLevelIndex);
+            hero.transform.position = startConnector.GetStartPosition() + offsetHeroToStartTile;
             
-            await UniTask.WaitUntil(() => levelLoader.IsInitStartLevel);
+            await UniTask.WaitUntil(() => loadingLevelInRuntime.IsInitStartLevel);
             _isInitialized = true;
             hero.IsMoving = true;
         }
@@ -79,7 +79,7 @@ namespace TapTapDash.Scripts
             var currentPosition = hero.transform.position;
             var foundAction = false;
 
-            var tileMapLevel = levelLoader.GetTileMapByPositon(currentPosition);
+            var tileMapLevel = loadingLevelInRuntime.GetTileMapByPositon(currentPosition);
             while (tileMapLevel && !foundAction)
             {
                 if (tileMapLevel.IsTile(currentPosition))

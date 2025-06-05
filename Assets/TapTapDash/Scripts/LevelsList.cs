@@ -11,9 +11,8 @@ namespace TapTapDash.Scripts
     public class LevelsList : ScriptableObject
     {
         [SerializeField] private AssetReferenceT<GameObject>[] levels;
-        
         [SerializeField] [ReadOnly] private string[] levelNames;
-        //public AssetReferenceT<GameObject>[] Levels => levels;
+
         public string[] LevelNames => levelNames;
         
         public AssetReferenceT<GameObject> GetLevel(int index)
@@ -29,12 +28,6 @@ namespace TapTapDash.Scripts
         public IEnumerable<AssetReferenceT<GameObject>> GetLevels()
         {
             return levels;
-        }
-        
-        [Button]
-        private void Reverse()
-        {
-            levels = levels.Reverse().ToArray();
         }
         
 #if UNITY_EDITOR

@@ -1,12 +1,13 @@
 using SuperTiled2Unity;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace TapTapDash.Scripts
 {
-    public class ChangeSpeedInEnterToTile : MonoBehaviour
+    public class ChangeSpeedEnterOntoTile : MonoBehaviour
     {
         [SerializeField] private Hero hero;
-        [SerializeField] private LevelLoader levelLoader;
+        [FormerlySerializedAs("levelLoader")] [SerializeField] private LoadingLevelInRuntime loadingLevelInRuntime;
 
         private SuperTileCoord _lastTile;
         private void Update()
@@ -16,7 +17,7 @@ namespace TapTapDash.Scripts
             
             var currentPosition = hero.transform.position;
 
-            var tileMapLevel = levelLoader.GetTileMapByPositon(currentPosition);
+            var tileMapLevel = loadingLevelInRuntime.GetTileMapByPositon(currentPosition);
             if (tileMapLevel)
             {
                 var tile = tileMapLevel.GetByTileWorldOrNull(currentPosition);
