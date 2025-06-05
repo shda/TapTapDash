@@ -361,7 +361,6 @@ GameObject:
   m_Component:
   - component: {fileID: 853152306}
   - component: {fileID: 853152309}
-  - component: {fileID: 853152308}
   - component: {fileID: 853152307}
   - component: {fileID: 853152310}
   m_Layer: 0
@@ -431,14 +430,6 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
---- !u!81 &853152308
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 853152305}
-  m_Enabled: 1
 --- !u!20 &853152309
 Camera:
   m_ObjectHideFlags: 0
@@ -782,7 +773,7 @@ Transform:
   m_GameObject: {fileID: 1170780680}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.23, y: -1.14, z: -10}
+  m_LocalPosition: {x: 11.846, y: -1.897, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1190,7 +1181,7 @@ Transform:
   m_GameObject: {fileID: 2120733687}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.23, y: -1.14, z: -10}
+  m_LocalPosition: {x: 11.846, y: -1.897, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1500,11 +1491,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6238835543659383063, guid: ab873c84f683bcc459bdae9bd77af048, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.23
+      value: 11.846
       objectReference: {fileID: 0}
     - target: {fileID: 6238835543659383063, guid: ab873c84f683bcc459bdae9bd77af048, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.14
+      value: -1.897
       objectReference: {fileID: 0}
     - target: {fileID: 6238835543659383063, guid: ab873c84f683bcc459bdae9bd77af048, type: 3}
       propertyPath: m_LocalPosition.z
